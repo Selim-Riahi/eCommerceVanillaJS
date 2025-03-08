@@ -153,6 +153,16 @@ document.addEventListener("keyup", function (e) {
     quantity.textContent = `  ${qNumber}`;
   }
 });
+document.addEventListener("DOMContentLoaded", function () {
+  // Sélectionner le bouton burger et le menu
+  const navbarToggler = document.querySelector(".navbar-toggler");
+  const navbarCollapse = document.querySelector(".navbar-collapse");
 
+  // Ajouter un écouteur d'événement sur le bouton burger
+  navbarToggler.addEventListener("click", function () {
+    // Basculer la classe "show" pour afficher ou masquer le menu
+    navbarCollapse.classList.toggle("show");
+  });
+});
 // cards events !
 // adding the like / Unlike event

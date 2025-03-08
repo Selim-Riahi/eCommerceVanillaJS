@@ -1,0 +1,255 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none !important;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --mainorange: #ffa500;
+  --lightOrange: #ffa600a4;
+  --mainBlack: black;
+  --mainGrey: #c4bdbd;
+  --white: #fff;
+  --darkGrey: #7d7878;
+  --greenMain: #08d608;
+  --greenLight: #c9f5c9;
+  --lightGrey: #d3d3d33d;
+  --red: red;
+}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: unset !important;
+}
+body {
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  width: 1px;
+  height: 1px;
+  background-color: var(--darkGrey);
+  border-radius: 5px;
+}
+/* Styles généraux pour le header */
+header {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  position: relative;
+}
+@media (max-width: 767.98px) {
+  header {
+    gap: 2rem;
+  }
+}
+.top-nav {
+  background-color: var(--lightGrey);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.5rem;
+}
+@media (max-width: 767.98px) {
+  .top-nav,
+  .nav,
+  .nav__links {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .head-nav__links,
+  .login-register {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-register {
+    margin-left: unset !important;
+  }
+  .main-nav {
+    justify-content: center !important;
+  }
+  .top-nav {
+    padding: 3rem 0;
+  }
+}
+.head-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.login-register {
+  margin-left: auto;
+}
+.login-register a {
+  color: var(--mainBlack) !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.login-register a:hover,
+.nav__links a:hover {
+  color: var(--mainorange);
+}
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.nav__links {
+  display: flex;
+  gap: 1.5rem;
+}
+.nav__links a {
+  color: var(--mainBlack);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.icon-shop {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  cursor: pointer;
+  position: relative;
+}
+h3 {
+  font-size: 1.5rem;
+  color: var(--mainBlack) !important;
+  font-weight: 600;
+}
+.product__number {
+  width: 25px;
+  height: 25px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 0.8rem;
+  position: absolute;
+  top: -17px;
+  right: -17px;
+}
+.sale {
+  position: relative;
+}
+
+.sale__number {
+  width: 30px;
+  height: 25px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 0.8rem;
+  position: absolute;
+  top: -1.2rem;
+  right: -15.5px;
+}
+
+@media (max-width: 767.98px) {
+  .product__number {
+    top: -16px;
+  }
+  .icon-shop {
+    position: relative;
+  }
+}
+/* hero container*/
+.hero {
+  margin-top: 1rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  gap: 2rem;
+}
+.hero img {
+  width: 100%;
+}
+@media (max-width: 767.98px) {
+  .hero img {
+    width: 80%;
+  }
+}
+/*Cards*/
+.card-group {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+@media (max-width: 991.98px) {
+  .card-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 767.98px) {
+  .card-group {
+    grid-template-columns: 1fr;
+    place-items: center;
+  }
+  .card {
+    height: 40vh !important;
+    width: 60%;
+  }
+}
+.card {
+  position: relative;
+  border-radius: 20px !important;
+  overflow: hidden;
+  transition: 0.8s ease;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card__img {
+  height: 100%;
+  width: 100%;
+}
+.card__section {
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+  font-size: 2rem;
+  font-family: monospace;
+}
+/*swiper*/
