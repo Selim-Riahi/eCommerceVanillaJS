@@ -46,17 +46,6 @@
   <body>
     <!--navbar-->
     <header class="container">
-      <!-- <div class="product hidden">
-        <div class="product__row">
-          <div class="product__img">
-            <img src="/imgs/pic2.jpg" alt="" />
-          </div>
-          <div class="product__details">
-            <h4>$125</h4>
-            <button type="button">buy Now</button>
-          </div>
-        </div> 
-      </div>-->
       <!--section superieure-->
       <div class="top-nav">
         <!--liens gauche-->
@@ -74,7 +63,7 @@
       <!--section principale-->
       <div class="main-nav">
         <!--section nav-->
-        <nav class="nav">
+        <div class="nav">
           <div class="logo">
             <h3>E-Commerce</h3>
           </div>
@@ -90,7 +79,7 @@
             </li>
             <li><a class="link" href="">Shipping</a></li>
           </ul>
-        </nav>
+        </div>
         <!--section icon-shop-->
         <div class="icon-shop">
           <div class="clearProduct">
@@ -100,7 +89,42 @@
           <i class="fa-solid fa-cart-shopping"></i>
 
           <div class="product__number">0</div>
-          <!-- <img src="/imgs/icon.jpg" alt="" />-->
+          <button class="burger-menu" aria-label="Toggle navigation">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+          </button>
+        </div>
+        <!--burger button-->
+        <!-- <button class="burger-menu" aria-label="Toggle navigation">
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+        </button> -->
+      </div>
+      <!--buger-->
+      <div class="burger-content">
+        <ul class="buger-top-nav">
+          <li><a class="link" href="">Guides</a></li>
+          <li><a class="link" href="">terms of sale</a></li>
+          <li><a class="link" href="">terms of use</a></li>
+          <li><a class="link" href="">privacy & policy</a></li>
+        </ul>
+        <hr class="burger-separator" />
+        <ul class="buger-main-nav">
+          <li><a class="link" href="">Home</a></li>
+          <li><a class="link" href="">men</a></li>
+          <li><a class="link" href="">women</a></li>
+          <li><a class="link" href="">kids</a></li>
+          <li><a class="link" href="">customise</a></li>
+          <li class="sale">
+            <a class="link" href="">sale</a>
+            <div class="sale__number">20%</div>
+          </li>
+          <li><a class="link" href="">shipping</a></li>
+        </ul>
+        <div class="burger-login">
+          <a class="link" href="">login/register</a>
         </div>
       </div>
     </header>
@@ -119,25 +143,25 @@
     <!--Cards-->
     <div class="container card-group">
       <div class="card">
-        <a href="">
+        <a href="" class="card-img__container">
           <img src="imgs/women_section.jpg" alt="" class="card__img" />
           <p class="card__section">women</p>
         </a>
       </div>
       <div class="card">
-        <a href="">
+        <a href="" class="card-img__container">
           <img src="imgs/women_section.jpg" alt="" class="card__img" />
           <p class="card__section">women</p>
         </a>
       </div>
       <div class="card">
-        <a href="">
+        <a href="" class="card-img__container">
           <img src="imgs/women_section.jpg" alt="" class="card__img" />
           <p class="card__section">women</p>
         </a>
       </div>
       <div class="card">
-        <a href="">
+        <a href="" class="card-img__container">
           <img src="imgs/women_section.jpg" alt="" class="card__img" />
           <p class="card__section">women</p>
         </a>
@@ -145,39 +169,154 @@
     </div>
     <!--Features-->
     <div class="container-fluid feature-group center">
-      <div class="title-primary hero-text">
-        <h3>just do it</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-          ratione dolorum architecto porro,
-        </p>
+      <div class="faet__text title-primary hero-text">
+        <h3>featured</h3>
+        <p>there are newest style of the season.</p>
       </div>
-      <div class="feature-slider"></div>
-      <div class="title-primary hero-text">
-        <h3>just do it</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-          ratione dolorum architecto porro,
-        </p>
+      <!-- Slider -->
+      <div class="swiper mySwiper container-fluid">
+        <div class="swiper-wrapper">
+          <div class="item swiper-slide">
+            <div class="card">
+              <a href="" class="card-img__container">
+                <img src="imgs/women_section.jpg" alt="" class="card__img" />
+                <p class="card__section">women</p>
+              </a>
+            </div>
+          </div>
+          <div class="item swiper-slide">
+            <div class="card">
+              <a href="" class="card-img__container">
+                <img src="imgs/women_section.jpg" alt="" class="card__img" />
+                <p class="card__section">women</p>
+              </a>
+            </div>
+          </div>
+          <div class="item swiper-slide">
+            <div class="card">
+              <a href="" class="card-img__container">
+                <img src="imgs/women_section.jpg" alt="" class="card__img" />
+                <p class="card__section">women</p>
+              </a>
+            </div>
+          </div>
+          <div class="item swiper-slide">
+            <div class="card">
+              <a href="" class="card-img__container">
+                <img src="imgs/women_section.jpg" alt="" class="card__img" />
+                <p class="card__section">women</p>
+              </a>
+            </div>
+          </div>
+          <div class="item swiper-slide">
+            <div class="card">
+              <a href="" class="card-img__container">
+                <img src="imgs/women_section.jpg" alt="" class="card__img" />
+                <p class="card__section">women</p>
+              </a>
+            </div>
+          </div>
+          <div class="item swiper-slide">
+            <div class="card">
+              <a href="" class="card-img__container">
+                <img src="imgs/women_section.jpg" alt="" class="card__img" />
+                <p class="card__section">women</p>
+              </a>
+            </div>
+          </div>
+          <div class="item swiper-slide">
+            <div class="card">
+              <a href="" class="card-img__container">
+                <img src="imgs/women_section.jpg" alt="" class="card__img" />
+                <p class="card__section">women</p>
+              </a>
+            </div>
+          </div>
+          <div class="item swiper-slide">
+            <div class="card">
+              <a href="" class="card-img__container">
+                <img src="imgs/women_section.jpg" alt="" class="card__img" />
+                <p class="card__section">women</p>
+              </a>
+            </div>
+          </div>
+          <div class="item swiper-slide">
+            <div class="card">
+              <a href="" class="card-img__container">
+                <img src="imgs/women_section.jpg" alt="" class="card__img" />
+                <p class="card__section">women</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      <div class="feat-footer title-primary hero-text">
+        <p class="by">(photo by joe felix/liverpool.co)</p>
+        <p class="season">liverpool's home & away kit 2022/2023 season.</p>
       </div>
     </div>
-
-    <!-- Slider -->
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
+    <!--picks-->
+    <div class="picker">
+      <div class="picker-title">
+        <h2 class="season">polpular picks</h2>
+        <p class="season">
+          our popular picks for most favorited nike men's & women's shoes.
+        </p>
       </div>
-      <div class="swiper-pagination"></div>
+      <!--swiper2-->
+      <div class="swiper-container swiper2">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="swiper2__item">
+              <a href="">
+                <img src="imgs/women_section.jpg" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper2__item">
+              <a href="">
+                <img src="imgs/women_section.jpg" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper2__item">
+              <a href="">
+                <img src="imgs/women_section.jpg" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper2__item">
+              <a href="">
+                <img src="imgs/women_section.jpg" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper2__item">
+              <a href="">
+                <img src="imgs/women_section.jpg" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="swpier2__buttons">
+          <button class="swiper2__right-button">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <button class="swiper2__left-button">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+        </div>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="swiper.js"></script>
+    <script src="navbar.js"></script>
   </body>
 </html>
