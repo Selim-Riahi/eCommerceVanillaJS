@@ -36,6 +36,9 @@ h6 {
   line-height: 1.2;
   color: unset !important;
 }
+html {
+  overflow-x: hidden;
+}
 body {
   overflow-x: hidden;
 }
@@ -519,6 +522,11 @@ h3 {
   align-items: center;
   gap: 10px;
 }
-.clearProduct {
-  background: transparent;
+.clearProduct button {
+  background: transparent !important;
+  border: none;
+}
+.reward-container {
+  background-color: rebeccapurple;
+  height: 100vh;
 }
