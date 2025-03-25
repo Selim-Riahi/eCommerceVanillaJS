@@ -1,0 +1,132 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none !important;
+  font-family: "Poppins", sans-serif;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h2 {
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.login-auth {
+  margin-bottom: 20px;
+}
+
+.login-auth label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.login-auth input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.login-auth p {
+  text-align: right;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.login-auth a {
+  color: #0066cc;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.button-register {
+  text-align: end;
+}
+
+.button-register button {
+  padding: 10px;
+  margin-bottom: 15px;
+}
+.button-register p {
+  color: #666;
+  font-size: 15px;
+}
+
+.button-register a {
+  color: #0066cc;
+  text-decoration: none;
+}
+/* Google Sign-In Styles */
+.social-login {
+  margin: 25px 0;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: #ddd;
+}
+
+.divider-text {
+  padding: 0 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+.google-signin {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #757575;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.google-btn:hover {
+  background: #f8f8f8;
+  color: #333;
+}
+
+/* Hide default Google button */
+.g-signin2 {
+  display: none;
+}

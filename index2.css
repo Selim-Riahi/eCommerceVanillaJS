@@ -538,11 +538,27 @@ h3 {
   height: 100%;
   overflow: hidden;
 }
+.btn-dark {
+  background-color: #212529;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.btn-dark:hover {
+  transform: scale(1.05);
+}
+.card-img {
+  max-height: 40vh;
+}
+
 .second-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .first-card {
   display: flex;
   justify-content: center;
@@ -565,4 +581,9 @@ h3 {
 }
 .card-body button:hover {
   transition: 0.3s ease;
+}
+/*footer*/
+.footer {
+  height: 30vh;
+  background-color: #212529;
 }
