@@ -40,7 +40,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="register.css" />
-    <!-- <link rel="stylesheet" href="auth.css" /> -->
+
     <title>register</title>
   </head>
   <body>
@@ -76,10 +76,10 @@
         name="Email"
         placeholder="Your work email"
       />
-      <div class="input-group mb-3">
+      <div class="input-group mb-3 select-container">
         <label for="country">Country</label>
-        <select class="form-select" id="inputGroupSelect01">
-          <option selected>United States of America</option>
+        <select class="form-select" id="stateSelect" required>
+          <option selected disabled>United States of America</option>
         </select>
       </div>
 
@@ -107,5 +107,6 @@
       <button id="loginBtn" type="button" class="btn btn-dark">join now</button>
       <p>Already registered? <a href="auth.html">sing in</a></p>
     </div>
+    <script src="register.js"></script>
   </body>
 </html>
