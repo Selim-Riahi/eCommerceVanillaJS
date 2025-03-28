@@ -176,6 +176,9 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   }
+  if (passwordInput) {
+    passwordInput.type = "password";
+  }
   if (togglePassword) {
     togglePassword.addEventListener("click", function () {
       const icon = this.querySelector("i");
