@@ -12,14 +12,14 @@ html {
 body {
   overflow-x: hidden;
 }
-
 body {
-  font-family: "Poppins", sans-serif;
+  margin: 0 auto 20px;
+  padding: 30px;
   max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
 header {
   text-align: center;
   margin-bottom: 30px;
@@ -42,17 +42,39 @@ header h2 {
 }
 .login-auth input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-sizing: border-box;
+  padding: 12px 0;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  background-color: transparent;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+.login-auth input:focus {
+  transform: scale(1.01);
+  border-bottom: 2px solid #999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  outline: none;
+}
+.login-auth input::placeholder {
+  color: #999;
+  opacity: 1;
+}
+.login-auth input:hover {
+  transform: scale(1.01);
+  border-bottom: 2px solid #999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
+/* help supprt password reset  */
+.support {
+  text-align: left !important;
+  margin: -10px 0 20px;
+}
 .login-auth p {
   text-align: right;
-  margin-bottom: 20px;
-  font-size: 15px;
+  margin: -10px 0 20px;
 }
 
 .login-auth a {
@@ -60,14 +82,41 @@ header h2 {
   text-decoration: none;
   margin-left: 5px;
 }
+.password-wrapper {
+  position: relative;
+}
+.input-group {
+  position: relative;
+}
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #999;
+}
+.toggle-password:hover {
+  color: #666;
+}
 
 .button-register {
   text-align: end;
+  margin-top: 20px;
 }
 
 .button-register button {
   padding: 10px;
   margin-bottom: 15px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.button-register button:hover {
+  background-color: #333;
 }
 .button-register p {
   color: #666;
@@ -80,7 +129,9 @@ header h2 {
 }
 /* Google Sign-In Styles */
 .social-login {
-  margin: 25px 0;
+  margin: 30px auto;
+  max-width: 450px;
+  padding: 0 30px;
 }
 
 .divider {
@@ -129,4 +180,59 @@ header h2 {
 /* Hide default Google button */
 .g-signin2 {
   display: none;
+}
+/* Add these styles to your existing auth.css */
+#userSection {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 500px;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+#logoutBtn {
+  margin-top: 1rem;
+  width: 70%;
+}
+
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: #ddd;
+}
+
+.divider-text {
+  padding: 0 1rem;
+  color: #6c757d;
+  font-size: 0.9rem;
 }

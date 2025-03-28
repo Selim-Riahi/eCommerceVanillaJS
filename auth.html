@@ -39,18 +39,19 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <link rel="stylesheet" href="auth.css" />
-    <title>authentication</title>
+    <title>E-commerce Authentification</title>
   </head>
   <body>
-    <header>
+    <header id="authHeader">
       <h2>welcome to E-commerce</h2>
-      <p>
+      <p id="authMessage">
         thanks for coming back, now get into your account my simple login
         through your email and password.
       </p>
     </header>
-    <div class="login-auth">
+    <div class="login-auth" id="loginForm">
       <label for="email"> Email Address</label>
       <input
         type="text"
@@ -58,7 +59,9 @@
         name="email"
         placeholder="Your email address"
       />
+      <div password-wrapper>
       <label for="password">Password </label>
+      <div class="input-group">
       <input
         type="text"
         id="password"
@@ -67,12 +70,14 @@
         required
         minlength="8"
       />
-      <p>Forgot Password?<a href="passeword.html">Reset Here</a></p>
+      <span class="toggle-password" id="togglePassword">
+        <i class="fas fa-eye-slash"></i>
+      </span>
     </div>
-    <!-- <div class="button-register">
-      <button type="button" class="btn btn-dark">join now</button>
-      <p>Don't have an account? <a href="">Register Here</a></p>
-    </div> -->
+    </div>
+      <p>Forgot Password?<a href="reste_password.html">Reset Here</a></p>
+    </div>
+   
 
      <!-- Add Google Sign-In section -->
       <div class="social-login">
@@ -91,8 +96,16 @@
       </div>
     </div>
     <div class="button-register">
-      <button type="button" class="btn btn-dark">join now</button>
+      <button id="loginBtn" type="button" class="btn btn-dark">join now</button>
       <p>Don't have an account? <a href="register.html">Register Here</a></p>
+    </div>
+    <div id="userSection" style="display: none;">
+      <div class="user-info">
+        <img src="" alt="user Avatar" class="avatar" id="userAvatar">
+        <h3 id="userName"></h3>
+        <p id="userEmail"></p>
+      </div>
+      <button id="logoutBtn" class="btn btn-danger">Logout</button>
     </div>
 
     <!-- Add Google auth script -->
