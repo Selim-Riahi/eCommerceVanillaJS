@@ -39,15 +39,17 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="auth.css" />
+    <link rel="stylesheet" href="register.css" />
+    <!-- <link rel="stylesheet" href="auth.css" /> -->
     <title>register</title>
   </head>
   <body>
     <header>
-      <h2>welcome to E-commerce</h2>
+      <h2>welcome t, let's creat an account</h2>
       <p>
-        thanks for coming back, now get into your account my simple login
-        through your email and password.
+        create an account to keep track of your customers, and contributors.
+        Once your account has been created then don't forget to verify your
+        account through mail.
       </p>
     </header>
     <div class="full_name">
@@ -68,13 +70,42 @@
     </div>
     <div class="informations">
       <label for="WorkEmail"> Work Email</label>
-      <input type="text" />
-      <label for=""></label>
-      <input type="text" />
-      <label for=""></label>
-      <input type="text" />
-      <label for=""></label>
-      <input type="text" />
+      <input
+        type="text"
+        id="Email"
+        name="Email"
+        placeholder="Your work email"
+      />
+      <div class="input-group mb-3">
+        <label for="country">Country</label>
+        <select class="form-select" id="inputGroupSelect01">
+          <option selected>United States of America</option>
+        </select>
+      </div>
+
+      <div class="input-group mb-3">
+        <label for="country">Where did you first hear about page?</label>
+        <select class="form-select" id="inputGroupSelect01">
+          <option selected>Select an option...</option>
+        </select>
+      </div>
+    </div>
+
+    <label for="password">Password</label>
+    <input
+      type="text"
+      id="password"
+      name="password"
+      placeholder="Must be at least 8 characters."
+    />
+
+    <p>
+      By contunuing you agree to the pige <a href="">terms of service</a> and
+      <a href="">privacy policy</a>
+    </p>
+    <div>
+      <button id="loginBtn" type="button" class="btn btn-dark">join now</button>
+      <p>Already registered? <a href="auth.html">sing in</a></p>
     </div>
   </body>
 </html>
