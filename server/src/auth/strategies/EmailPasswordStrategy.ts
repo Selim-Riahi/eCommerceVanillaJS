@@ -3,25 +3,21 @@ import { AuthStrategy } from "./AuthStrategy";
 import { UserModel } from "../../models/User";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { InvalidCredentialsError, UserExistsError } from "../auth.errors";
 
 export class EmailPasswordStrategy implements AuthStrategy {
   async authenticate({ email, password }: { email: string; password: string }) {
-    // 1. Find user by email
     const user = await UserModel.findOne({ email });
     if (!user) {
-      throw new Error("User not found");
+      throw new InvalidCredentialsError();
     }
 
-    // 2. Verify password
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      throw new Error("Invalid credentials");
+      throw new InvalidCredentialsError();
     }
 
-    // 3. Generate JWT token
     const token = this.generateToken(user);
-
-    // 4. Return user without password and token
     const { password: _, ...userWithoutPassword } = user.toObject();
 
     return { user: userWithoutPassword, token };
@@ -36,16 +32,12 @@ export class EmailPasswordStrategy implements AuthStrategy {
     password: string;
     name: string;
   }) {
-    // 1. Check if user exists
     const existingUser = await UserModel.findOne({ email });
     if (existingUser) {
-      throw new Error("User already exists");
+      throw new UserExistsError();
     }
 
-    // 2. Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
-
-    // 3. Create new user
     const user = new UserModel({
       email,
       password: hashedPassword,
@@ -55,19 +47,20 @@ export class EmailPasswordStrategy implements AuthStrategy {
 
     await user.save();
 
-    // 4. Generate JWT token
     const token = this.generateToken(user);
-
-    // 5. Return user without password and token
     const { password: _, ...userWithoutPassword } = user.toObject();
 
     return { user: userWithoutPassword, token };
   }
 
   private generateToken(user: any): string {
+    if (!process.env.JWT_SECRET) {
+      throw new Error("JWT_SECRET is not configured");
+    }
+
     return jwt.sign(
       { id: user._id, email: user.email },
-      process.env.JWT_SECRET!,
+      process.env.JWT_SECRET,
       { expiresIn: "1h" }
     );
   }
