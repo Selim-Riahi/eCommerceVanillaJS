@@ -1,4 +1,3 @@
-// src/auth/strategies/AuthStrategyFactory.ts
 import { EmailPasswordStrategy } from "./EmailPasswordStrategy";
 import { AuthStrategy } from "./AuthStrategy";
 // Import other strategies as needed
@@ -6,7 +5,7 @@ import { AuthStrategy } from "./AuthStrategy";
 // import { OAuthStrategy } from "./OAuthStrategy";
 
 export class AuthStrategyFactory {
-  static createStrategy(authMethod: string): AuthStrategy {
+  createStrategy(authMethod: string): AuthStrategy {
     switch (authMethod.toLowerCase()) {
       case "email":
         return new EmailPasswordStrategy();

@@ -6,8 +6,13 @@ export class AuthController {
 
   async login(req: Request, res: Response) {
     try {
-      const { email, password } = req.body;
-      const { user, token } = await this.authService.login(email, password);
+      const { email, password, authMethod = "email" } = req.body;
+
+      const { user, token } = await this.authService.login(
+        email,
+        password,
+        authMethod
+      );
 
       res.json({
         success: true,
@@ -17,7 +22,7 @@ export class AuthController {
     } catch (error) {
       res.status(401).json({
         success: false,
-        message: "Invalid credentials",
+        message: error instanceof Error ? error.message : "Invalid credentials",
       });
     }
   }

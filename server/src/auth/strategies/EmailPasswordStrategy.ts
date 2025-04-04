@@ -1,4 +1,3 @@
-// src/auth/strategies/EmailPasswordStrategy.ts
 import { AuthStrategy } from "./AuthStrategy";
 import { UserModel } from "../../models/User";
 import bcrypt from "bcrypt";

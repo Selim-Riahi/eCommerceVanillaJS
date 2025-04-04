@@ -1,4 +1,3 @@
-// src/auth/auth.errors.ts
 export class AuthenticationError extends Error {
   constructor(message: string) {
     super(message);
