@@ -78,33 +78,45 @@
       />
       <div class="input-group mb-3 select-container">
         <label for="country">Country</label>
-        <select class="form-select" id="stateSelect" required>
+        <select class="form-select" id="stateSelect" required name="country">
           <option selected disabled>United States of America</option>
         </select>
       </div>
 
       <div class="input-group mb-3">
-        <label for="country">Where did you first hear about page?</label>
-        <select class="form-select" id="inputGroupSelect01">
+        <label for="inputGroupSelect01"
+          >Where did you first hear about page?</label
+        >
+        <select class="form-select" id="inputGroupSelect01" name="social">
           <option selected>Select an option...</option>
+          <option>Facebook</option>
+          <option>Instagram</option>
+          <option>Youtube</option>
+          <option>Other...</option>
         </select>
       </div>
     </div>
 
     <label for="password">Password</label>
     <input
-      type="text"
+      type="password"
       id="password"
       name="password"
       placeholder="Must be at least 8 characters."
     />
-
+    <label for="confirmPassword">Confirm password</label>
+    <input
+      type="password"
+      id="confirmPassword"
+      name="confirmPassword"
+      placeholder="Confirm your password."
+    />
     <p>
       By contunuing you agree to the pige <a href="">terms of service</a> and
       <a href="">privacy policy</a>
     </p>
     <div>
-      <button id="loginBtn" type="button" class="btn btn-dark">join now</button>
+      <button id="loginBtn" type="button" class="btn btn-dark">Register</button>
       <p>Already registered? <a href="auth.html">sing in</a></p>
     </div>
     <script src="register.js"></script>
