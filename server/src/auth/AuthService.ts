@@ -2,6 +2,7 @@ import { AuthStrategyFactory } from "./strategies/AuthStrategyFactory";
 import { InvalidCredentialsError, UserExistsError } from "./auth.errors";
 import { AuthContext } from "./AuthContext";
 import { EmailPasswordStrategy } from "./strategies/EmailPasswordStrategy";
+import { RegisterDTO } from "../types/RegisterDTO";
 
 export class AuthService {
   private authContext: AuthContext;
@@ -9,7 +10,7 @@ export class AuthService {
 
   constructor(strategyFactory: AuthStrategyFactory) {
     this.strategyFactory = strategyFactory;
-    this.authContext = new AuthContext(new EmailPasswordStrategy()); // Optional: Default strategy
+    this.authContext = new AuthContext(new EmailPasswordStrategy());
   }
 
   async login(email: string, password: string, authMethod: string) {
@@ -31,18 +32,11 @@ export class AuthService {
     }
   }
 
-  async register(
-    email: string,
-    password: string,
-    name: string,
-    authMethod: string
-  ) {
+  async register(userData: RegisterDTO) {
     try {
-      // Call `createStrategy` as an instance method
-      const strategy = this.strategyFactory.createStrategy(authMethod);
+      const strategy = this.strategyFactory.createStrategy(userData.authMethod);
       this.authContext = new AuthContext(strategy);
-
-      return await this.authContext.register({ email, password, name });
+      return await this.authContext.register(userData);
     } catch (error) {
       if (error instanceof Error) {
         if (error.message.includes("User already exists")) {

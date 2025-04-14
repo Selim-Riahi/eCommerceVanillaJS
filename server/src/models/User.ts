@@ -1,10 +1,15 @@
 import mongoose, { Document, Schema } from "mongoose";
 
+// Define the IUser interface with the new fields
 export interface IUser extends Document {
   email: string;
   password: string;
-  name: string;
   authMethod: string;
+  country?: string;
+  confirmpassword?: string;
+  firstname?: string;
+  lastname?: string;
+  socials?: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -25,15 +30,30 @@ const UserSchema = new Schema<IUser>(
       required: true,
       minlength: [6, "Password must be at least 6 characters long"],
     },
-    name: {
-      type: String,
-      required: true,
-      trim: true,
-    },
     authMethod: {
       type: String,
       required: true,
       default: "email",
+    },
+    country: {
+      type: String,
+      required: false,
+    },
+    confirmpassword: {
+      type: String,
+      required: [true, "Confirm Password is required"],
+    },
+    firstname: {
+      type: String,
+      required: true,
+    },
+    lastname: {
+      type: String,
+      required: false,
+    },
+    socials: {
+      type: String,
+      required: true,
     },
   },
   {

@@ -1,4 +1,5 @@
 // src/auth/AuthContext.ts
+import { RegisterDTO } from "../types/RegisterDTO";
 import { AuthStrategy } from "./strategies/AuthStrategy";
 
 export class AuthContext {
@@ -8,14 +9,14 @@ export class AuthContext {
     this.strategy = strategy;
   }
 
-  async authenticate(args: any) {
-    return this.strategy.authenticate(args);
+  async authenticate(credentials: { email: string; password: string }) {
+    return this.strategy.authenticate(credentials);
   }
 
-  async register(args: any) {
-    if (!("register" in this.strategy)) {
+  async register(userData: RegisterDTO) {
+    if (typeof this.strategy.register !== "function") {
       throw new Error("Registration not supported for this strategy");
     }
-    return this.strategy.register!(args);
+    return this.strategy.register(userData);
   }
 }
