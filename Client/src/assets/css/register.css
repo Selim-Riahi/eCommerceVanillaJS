@@ -1,0 +1,224 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fa;
+  color: #1e293b;
+  line-height: 1.5;
+  padding: 30px;
+  max-width: 500px;
+  margin: 0 auto 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #1e293b;
+}
+
+header p {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+  background-color: white;
+}
+
+.full_name {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.input-group.mb-3 {
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.input-group.mb-3 label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.input-group.mb-3 .form-select {
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+#loginBtn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #1e293b;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  margin: 1.5rem 0 1rem;
+  cursor: pointer;
+}
+
+a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  color: #64748b;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  body {
+    padding: 1.5rem;
+  }
+
+  .full_name {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+/* Style spécifique pour le dropdown qui s'ouvre vers le bas */
+.select-container {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+#stateSelect {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  background-color: white;
+  appearance: none;
+  cursor: pointer;
+  position: relative; /* Important pour le z-index */
+  z-index: 1; /* Place au-dessus de l'icône */
+}
+
+/* Flèche personnalisée */
+.select-container::after {
+  content: "▼";
+  font-size: 12px;
+  color: #64748b;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Forcer l'ouverture vers le bas */
+#stateSelect {
+  transform: translateY(0); /* Reset toute transformation */
+}
+
+/* Solution spécifique pour Firefox */
+@-moz-document url-prefix() {
+  #stateSelect {
+    padding-right: 2.5rem;
+    background-image: none;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Solution pour Edge/IE */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  #stateSelect {
+    padding-right: 2.5rem;
+  }
+}
+/* Conteneur principal */
+.select-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+/* Style du select */
+#stateSelect {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  background-color: white;
+  appearance: none;
+  cursor: pointer;
+  /* Empêche le décalage vers le haut */
+  transform: translateY(0) !important;
+  position: relative;
+  z-index: 10;
+}
+
+/* Flèche personnalisée */
+.select-container::after {
+  content: "▼";
+  font-size: 12px;
+  color: #64748b;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Solution pour forcer l'ouverture vers le bas */
+#stateSelect option {
+  position: static !important;
+  transform: none !important;
+}
+
+/* Correction spécifique pour mobile */
+@media (max-width: 768px) {
+  #stateSelect {
+    /* Force l'ouverture vers le bas sur mobile */
+    transform-origin: top !important;
+  }
+
+  /* Solution pour iOS */
+  @supports (-webkit-touch-callout: none) {
+    #stateSelect {
+      padding-right: 2.5rem;
+    }
+  }
+}
+
+/* Solution pour Firefox */
+@-moz-document url-prefix() {
+  #stateSelect {
+    /* Correction spécifique Firefox */
+    text-overflow: ellipsis;
+    background-image: none !important;
+  }
+}
